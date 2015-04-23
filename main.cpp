@@ -9,7 +9,7 @@ bool condicion = true;
 int operacion;
 
 void salir(){
-	cout<<"¿Desea realizar otra operacion(S/N)?"<<endl;
+	cout<<"Â¿Desea realizar otra operacion(S/N)?"<<endl;
 	cin>>a;
 	switch(a){
 		case 's':
@@ -32,9 +32,11 @@ void multiplicar(){
 	salir();
 }
 void dividir(){
-	resultado = num%num2;
-	cout<<salida<<resultado<<endl;
-	salir();
+	if(num2 != null || num2 != 0){
+		resultado = num/num2;
+		cout<<salida<<resultado<<endl;
+		salir();
+	}
 }
 void restar(){
 	resultado = num-num2;
@@ -65,16 +67,16 @@ void solicitarDatos(){
 
 	switch(operacion){
 		case 1:
-			dividir();
+			sumar();
 		break;
      	case 2:
-			multiplicar();
-		break;
-		case 3:
 			restar();
 		break;
+		case 3:
+			multiplicar();
+		break;
 		case 4:
-			sumar();
+			dividir();
 		break;
 	}
 }
@@ -85,6 +87,5 @@ int main(int argc, char const *argv[])
 	while(condicion)
 	{
 	solicitarDatos();
-	salir();
 	}
 }
